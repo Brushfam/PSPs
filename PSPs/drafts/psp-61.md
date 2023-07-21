@@ -23,7 +23,7 @@ without having any ABI of that contracts.
 ### 1. Interface ID (TRAIT_ID)
 
 Interface ID is a 4-byte identifier of the interface, stored in `u32` big-endian format. It is calculated as the first 4 bytes of the blake2b hash of the string,
-that is concatenation of all messages, sorted in lexicographical order. Such as in the example below:
+that is concatenation of all message selectors, sorted in lexicographical order. Such as in the example below:
 
 ```rust
 message_selectors.sort_unstable();
@@ -136,18 +136,21 @@ use ink::prelude::{
     vec::Vec,
 };
 
+/// User-defined interfaces (not part of PSP, but provided to show the full implementation
 pub trait PSP61Internal {
     fn _interfaces(&self) -> Vec<u32> {
         vec![]
     }
 }
 
+/// OB interfaces (not part of PSP, but provided to show the full implementation
 pub trait PSP61InternalOB {
     fn _interfaces_ob(&self) -> Vec<u32> {
         vec![]
     }
 }
 
+/// Implementation of PSP61
 pub trait PSP61Impl: PSP61Internal + PSP61InternalOB {
     fn supports_interface(&self, interface_id: u32) -> bool {
         self._interfaces().contains(&interface_id) || self._interfaces_ob().contains(&interface_id)
@@ -160,7 +163,7 @@ pub trait PSP61Impl: PSP61Internal + PSP61InternalOB {
     }
 }
 
-/// Macro for implementing PSP61Internal trait
+/// Macro for implementing PSP61Internal trait, not part of PSP, provided for full example
 #[macro_export]
 macro_rules! supported_interfaces {
     ($contract:ident => $($interface_id:expr),*) => {
@@ -176,7 +179,7 @@ macro_rules! supported_interfaces {
 }
 ```
 
-And implementation of this trait is done via `#[openbrush::implementation]` macro:
+And implementation of this trait in OB is done via `#[openbrush::implementation]` macro:
 ```rust
 // examples/psp61/lib.rs
 #![cfg_attr(not(feature = "std"), no_std, no_main)]
