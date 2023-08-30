@@ -61,7 +61,8 @@ Selector: `0x162df8c2` - first 4 bytes of `blake2b_256("PSP22::total_supply")`
   ],
   "returnType": {
     "displayName": [
-      "Balance"
+      "ink",
+      "MessageResult"
     ],
     "type": "Balance"
   },
@@ -96,7 +97,8 @@ Selector: `0x6568382f` - first 4 bytes of `blake2b_256("PSP22::balance_of")`
   ],
   "returnType": {
     "displayName": [
-      "Balance"
+      "ink",
+      "MessageResult"
     ],
     "type": "Balance"
   },
@@ -140,7 +142,8 @@ Selector: `0x4d47d921` - first 4 bytes of `blake2b_256("PSP22::allowance")`
   ],
   "returnType": {
     "displayName": [
-      "Balance"
+      "ink",
+      "MessageResult"
     ],
     "type": "Balance"
   },
@@ -204,7 +207,8 @@ Selector: `0xdb20f9f5` - first 4 bytes of `blake2b_256("PSP22::transfer")`
   ],
   "returnType": {
     "displayName": [
-      "Result"
+      "ink",
+      "MessageResult"
     ],
     "type": 1
   },
@@ -282,7 +286,8 @@ Selector: `0x54b3c76e` - first 4 bytes of `blake2b_256("PSP22::transfer_from")`
   ],
   "returnType": {
     "displayName": [
-      "Result"
+      "ink",
+      "MessageResult"
     ],
     "type": 1
   },
@@ -335,7 +340,8 @@ Selector: `0xb20f1bbd` - first 4 bytes of `blake2b_256("PSP22::approve")`
   ],
   "returnType": {
     "displayName": [
-      "Result"
+      "ink",
+      "MessageResult"
     ],
     "type": 1
   },
@@ -386,7 +392,8 @@ Selector: `0x96d6b57a` - first 4 bytes of `blake2b_256("PSP22::increase_allowanc
   ],
   "returnType": {
     "displayName": [
-      "Result"
+      "ink",
+      "MessageResult"
     ],
     "type": 1
   },
@@ -439,7 +446,8 @@ Selector: `0xfecb57d5` - first 4 bytes of `blake2b_256("PSP22::decrease_allowanc
   ],
   "returnType": {
     "displayName": [
-      "Result"
+      "ink",
+      "MessageResult"
     ],
     "type": 1
   },
